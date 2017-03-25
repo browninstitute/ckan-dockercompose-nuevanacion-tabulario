@@ -45,10 +45,10 @@ RUN pip install -r /usr/lib/ckan/default/src/ckan/requirements.txt
 
 ##################
 #   CKAN CONFIG  #
+#      Pt 1      #
 ##################
 RUN mkdir -p /etc/ckan/ && chown -R `whoami` /etc/ckan/
-COPY ./resources/production.ini /etc/ckan/default/production.ini
-RUN ln -s /usr/lib/ckan/default/src/ckan/who.ini /etc/ckan/default/who.ini
+
 
 
 ##################
@@ -74,6 +74,14 @@ RUN git clone https://github.com/open-data/ckanext-cloudstorage.git
 WORKDIR /usr/lib/ckan/ckanext-cloudstorage/
 RUN git checkout d354fc752a9d501a3f4696295a83794393e447fe
 RUN python setup.py install
+
+
+##################
+#   CKAN CONFIG  #
+#      Pt 1      #
+##################
+COPY ./resources/production.ini /etc/ckan/default/production.ini
+RUN ln -s /usr/lib/ckan/default/src/ckan/who.ini /etc/ckan/default/who.ini
 
 
 ###################################
