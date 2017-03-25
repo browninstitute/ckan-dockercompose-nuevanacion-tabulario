@@ -1,0 +1,10 @@
+version: '2'
+services:
+  nginx:
+    restart: always
+  ckan:
+    restart: always
+  datapusher:
+    restart: always
+  solr:
+    restart: always
