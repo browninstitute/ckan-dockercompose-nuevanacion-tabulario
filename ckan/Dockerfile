@@ -59,6 +59,9 @@ RUN pip install 'ckanext-geoview==0.0.12'
 RUN pip install 'ckanext-envvars==0.0.1'
 RUN pip install 'ckanext-pdfview==0.0.5'
 
+#CKAN Datapreview https://github.com/datagovuk/ckanext-datapreview
+RUN pip install -e git+https://github.com/datagovuk/ckanext-datapreview.git#egg=ckanext-datapreview
+
 # there are no release labels for this, so work only on a known-good commit
 WORKDIR /usr/lib/ckan/
 RUN git clone https://github.com/ckan/ckanext-mapviews.git
