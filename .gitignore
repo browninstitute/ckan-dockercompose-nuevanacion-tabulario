@@ -4,3 +4,5 @@
 
 # the CKAN data file, containing file uploads
 data
+
+.DS_Store
