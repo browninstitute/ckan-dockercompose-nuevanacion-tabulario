@@ -2,17 +2,21 @@ version: '2'
 services:
   nginx:
     restart: always
-    log_opt:
-      max-size: 100m
+    logging:
+      options:
+        max-size: '100m'
   ckan:
     restart: always
-    log_opt:
-      max-size: 100m
+    logging:
+      options:
+        max-size: '100m'
   datapusher:
     restart: always
-    log_opt:
-      max-size: 100m
+    logging:
+      options:
+        max-size: '100m'
   solr:
     restart: always
-    log_opt:
-      max-size: 100m
+    logging:
+      options:
+        max-size: '100m'
